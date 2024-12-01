@@ -29,8 +29,10 @@ const Login = () => {
               >
                 <MessageSquare className="w-6 h-6 text-primary" />
               </div>
-              <h1 className="text-2xl font-bold mt-2">Welcome Back</h1>
-              <p className="text-base-content/60">Sign in to your account</p>
+              <h1 className="text-2xl font-sfd mt-2">Welcome Back</h1>
+              <p className="text-base-content/60 font-sfr">
+                Sign in to your account
+              </p>
             </div>
           </div>
 
@@ -38,7 +40,7 @@ const Login = () => {
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="form-control">
               <label className="label">
-                <span className="label-text font-medium">Email</span>
+                <span className="label-text font-medium font-sfr">Email</span>
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -46,7 +48,7 @@ const Login = () => {
                 </div>
                 <input
                   type="email"
-                  className={`input input-bordered w-full pl-10`}
+                  className={`input input-bordered w-full pl-10 font-sfr`}
                   placeholder="you@example.com"
                   value={formData.email}
                   onChange={(e) =>
@@ -58,7 +60,9 @@ const Login = () => {
 
             <div className="form-control">
               <label className="label">
-                <span className="label-text font-medium">Password</span>
+                <span className="label-text font-medium font-sfr">
+                  Password
+                </span>
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -66,7 +70,7 @@ const Login = () => {
                 </div>
                 <input
                   type={showPassword ? "text" : "password"}
-                  className={`input input-bordered w-full pl-10`}
+                  className={`input input-bordered w-full pl-10 font-sfr`}
                   placeholder="••••••••"
                   value={formData.password}
                   onChange={(e) =>
@@ -89,12 +93,12 @@ const Login = () => {
 
             <button
               type="submit"
-              className="btn btn-primary w-full"
+              className="btn btn-primary w-full font-sfr"
               disabled={isLoggingIn}
             >
               {isLoggingIn ? (
                 <>
-                  <Loader2 className="h-5 w-5 animate-spin" />
+                  <Loader2 className="h-5 w-5 animate-spin font-sfr" />
                   Loading...
                 </>
               ) : (
@@ -104,9 +108,9 @@ const Login = () => {
           </form>
 
           <div className="text-center">
-            <p className="text-base-content/60">
+            <p className="text-base-content/60 font-sfr">
               Don&apos;t have an account?{" "}
-              <Link to="/register" className="link link-primary">
+              <Link to="/register" className="link link-primary font-sfr">
                 Create account
               </Link>
             </p>
@@ -117,10 +121,10 @@ const Login = () => {
       {/* Right side of the form with social links */}
       <div className="hidden lg:flex items-center justify-center bg-base-200 p-12">
         <div className="max-w-md text-center">
-          <h1 className="text-2xl font-normal mb-5">
+          <h1 className="text-2xl font-normal mb-5 font-sfd">
             Sign In to continue your conversation!
           </h1>
-          <h1 className="text-3xl font-bold mb-5">Follow Us</h1>
+          <h1 className="text-3xl font-bold mb-5 font-sfr">Follow Us</h1>
           <div className="space-y-4">
             {/* Social logos for large screens */}
             <div className="hidden lg:flex space-x-6 justify-center">

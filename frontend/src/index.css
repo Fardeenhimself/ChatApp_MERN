@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "SFD";
+    src: url("./fonts/SF-Pro-Display-Regular.woff") format("woff");
+  }
+
+  @font-face {
+    font-family: "SFR";
+    src: url("./fonts/SF-Pro-Rounded-Regular.woff") format("woff");
+  }
+}

@@ -26,7 +26,7 @@ const Sidebar = () => {
       <div className="border-b border-base-300 w-full p-5">
         <div className="flex items-center gap-2">
           <Users className="size-6" />
-          <span className="font-medium hidden lg:block">Contacts</span>
+          <span className="font-medium hidden lg:block font-sfd">Contacts</span>
         </div>
         {/*Online feature*/}
         <div className="mt-3 hidden lg:flex items-center gap-2">
@@ -37,9 +37,9 @@ const Sidebar = () => {
               onChange={(e) => setShowOnlineOnly(e.target.checked)}
               className="checkbox checkbox-sm"
             />
-            <span className="text-sm">Show online only</span>
+            <span className="text-sm font-sfr">Show online only</span>
           </label>
-          <span className="text-xs text-zinc-500">
+          <span className="text-xs text-zinc-500 font-sfr">
             ({onlineUsers?.length || 0} online)
           </span>
         </div>
@@ -51,7 +51,7 @@ const Sidebar = () => {
             key={user._id}
             onClick={() => setSelectedUser(user)}
             className={`
-              w-full p-3 flex items-center gap-3
+              w-full font-sfd p-3 flex items-center gap-3
               hover:bg-base-300 transition-colors
               ${
                 selectedUser?._id === user._id
@@ -85,7 +85,9 @@ const Sidebar = () => {
         ))}
 
         {filteredUsers.length === 0 && (
-          <div className="text-center text-zinc-500 py-4">No online users</div>
+          <div className="text-center text-zinc-500 py-4 font-sfr">
+            No online users
+          </div>
         )}
       </div>
     </aside>

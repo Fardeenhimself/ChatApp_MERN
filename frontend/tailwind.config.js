@@ -4,7 +4,12 @@ import daisyui from "daisyui";
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sfd: ["SFD", "sans-serif"], // Fallback to sans-serif
+        sfr: ["SFR", "sans-serif"], // Fallback to sans-serif
+      },
+    },
   },
   plugins: [daisyui],
   daisyui: {

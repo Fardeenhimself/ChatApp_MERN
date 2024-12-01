@@ -56,8 +56,8 @@ const SignUp = () => {
               <div className="size-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                 <MessageSquare className="size-6 text-primary" />
               </div>
-              <h1 className="text-2xl font-bold mt-2">Create Account</h1>
-              <p className="text-base-content/60">
+              <h1 className="text-2xl font-sfd mt-2">Create Account</h1>
+              <p className=" font-sfr text-base-content/60">
                 Get started with your new account
               </p>
             </div>
@@ -65,7 +65,9 @@ const SignUp = () => {
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="form-control">
               <label className="label">
-                <span className="label-text font-medium">Full Name</span>
+                <span className="label-text font-medium font-sfr">
+                  Full Name
+                </span>
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -73,7 +75,7 @@ const SignUp = () => {
                 </div>
                 <input
                   type="text"
-                  className={`input input-bordered w-full pl-10`}
+                  className={`input input-bordered w-full pl-10 font-sfr`}
                   placeholder="Dipu Hawleder"
                   value={formData.fullName}
                   onChange={(e) =>
@@ -84,7 +86,7 @@ const SignUp = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text font-medium">Email</span>
+                <span className="label-text font-medium font-sfr">Email</span>
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -92,7 +94,7 @@ const SignUp = () => {
                 </div>
                 <input
                   type="email"
-                  className={`input input-bordered w-full pl-10`}
+                  className={`input input-bordered w-full pl-10 font-sfr`}
                   placeholder="dipu@hawleder.com"
                   value={formData.email}
                   onChange={(e) =>
@@ -103,7 +105,9 @@ const SignUp = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text font-medium">Password</span>
+                <span className="label-text font-medium font-sfr">
+                  Password
+                </span>
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -111,7 +115,7 @@ const SignUp = () => {
                 </div>
                 <input
                   type={showPassword ? "text" : "password"}
-                  className={`input input-bordered w-full pl-10`}
+                  className={`input input-bordered w-full pl-10 font-sfr`}
                   placeholder=""
                   value={formData.password}
                   onChange={(e) =>
@@ -134,7 +138,7 @@ const SignUp = () => {
 
             <button
               type="submit"
-              className="btn btn-primary w-full"
+              className="btn btn-primary w-full font-sfr"
               disabled={isSigningUp}
             >
               {isSigningUp ? (
@@ -148,9 +152,9 @@ const SignUp = () => {
             </button>
           </form>
           <div className="text-center">
-            <p className="text-base-content/60">
+            <p className="text-base-content/60 font-sfr">
               Already have an account?{" "}
-              <Link to="/login" className="link link-primary">
+              <Link to="/login" className="link link-primary font-sfr">
                 Sign in
               </Link>
             </p>
@@ -160,7 +164,9 @@ const SignUp = () => {
       {/* Right side of the form with social links */}
       <div className="hidden lg:flex items-center justify-center bg-base-200 p-12">
         <div className="max-w-md text-center">
-          <h1 className="text-3xl font-bold mb-5">Join our community today!</h1>
+          <h1 className="text-3xl font-bold mb-5 font-sfd">
+            Join our community today!
+          </h1>
           <div className="space-y-4">
             {/* Social logos for large screens */}
             <div className="hidden lg:flex space-x-6 justify-center">

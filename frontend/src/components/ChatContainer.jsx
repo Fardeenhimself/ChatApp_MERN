@@ -35,7 +35,7 @@ const ChatContainer = () => {
             key={message._id}
             className={`chat ${
               message.senderId === authUser._id ? "chat-end" : "chat-start"
-            }`}
+            } font-sfr`}
           >
             <div className="chat-image avatar">
               <div className="size-10 rounded-full border">
@@ -50,7 +50,7 @@ const ChatContainer = () => {
               </div>
             </div>
             <div className="chat-header mb-1">
-              <time className="text-xs opacity-50 ml-1">
+              <time className="text-xs opacity-50 ml-1 font-sfr">
                 {formatMessageTime(message.createdAt)}
               </time>
             </div>
