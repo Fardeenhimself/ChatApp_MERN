@@ -40,7 +40,7 @@ const Sidebar = () => {
             <span className="text-sm font-sfr">Show online only</span>
           </label>
           <span className="text-xs text-zinc-500 font-sfr">
-            ({onlineUsers?.length || 0} online)
+            ({onlineUsers.length - 1} online)
           </span>
         </div>
       </div>

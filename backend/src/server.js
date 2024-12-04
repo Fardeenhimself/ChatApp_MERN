@@ -1,24 +1,22 @@
-const app=require('./app');
-const server=require('http').createServer(app);
+const app = require('./app');
+const http = require('http');
 const connectDB = require('./lib/db');
+const { initializeSocket } = require('./lib/socket.io'); // Import initializeSocket
 
 require('dotenv').config();
 
+const server = http.createServer(app);
+initializeSocket(server);  // Initialize socket.io
 
-
-const PORT=process.env.PORT;
-
-async function startServer()
-{
+async function startServer() {
     await connectDB();
-
-    server.listen(PORT,()=>{
+    
+    const PORT = process.env.PORT || 3000;
+    server.listen(PORT, () => {
         console.log(`Server started on port ${PORT}`);
     });
-    
-
 }
 
 startServer();
 
-module.exports=server;
+module.exports = server; // Export the server instance, not io

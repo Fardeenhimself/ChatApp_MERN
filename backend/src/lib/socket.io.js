@@ -1,38 +1,38 @@
-const {Server}=require('socket.io');
-const server=require('../server');
+// lib/socket.js
+const { Server } = require('socket.io');
+const io = new Server();
 
-const io=new Server(server,{
-    cors:{
-        origin:"*",
-        methods:["GET","POST"]
-    }
-});
+function initializeSocket(server) {
+    io.attach(server, {
+        cors: {
+            origin: '*',
+            methods: ['GET', 'POST'],
+        },
+    });
+    console.log('Socket.io initialized');
+}
 
-function getReceiverSocketId(userId)
-{
+const userSocketMap = {};
+
+function getReceiverSocketId(userId) {
     return userSocketMap[userId];
 }
 
-const userSocketMap={};
+io.on('connection', (socket) => {
+    console.log('A user connected:', socket.id);
 
-
-io.on('connection',(socket)=>{
-    console.log('A user connected',socket.id);
-
-    const userId=socket.handshake.query.userId;
-    if(userId){
-        userSocketMap[userId]=socket.id;
+    const userId = socket.handshake.query.userId;
+    if (userId) {
+        userSocketMap[userId] = socket.id;
     }
-    io.emit("getOnlineUsers",Object.keys(userSocketMap));
 
-    socket.on('disconnect',()=>{
-        console.log("A user disconnected",socket.id);
+    io.emit('getOnlineUsers', Object.keys(userSocketMap));
+
+    socket.on('disconnect', () => {
+        console.log('A user disconnected:', socket.id);
         delete userSocketMap[userId];
-        io.emit("getOnlineUsers",Object.keys(userSocketMap)); 
+        io.emit('getOnlineUsers', Object.keys(userSocketMap));
     });
 });
 
-module.exports={
-    getReceiverSocketId,
-    io
-}
+module.exports = { io, initializeSocket, getReceiverSocketId };
